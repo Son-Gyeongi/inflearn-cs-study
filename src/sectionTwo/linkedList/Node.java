@@ -13,6 +13,10 @@ public class Node {
         this.next = next;
     }
 
+    public Object getData() {
+        return data;
+    }
+
     @Override
     public String toString() {
         return "Node{" +

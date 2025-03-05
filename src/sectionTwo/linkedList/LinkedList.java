@@ -7,6 +7,10 @@ public class LinkedList {
     Node head; // 연결리스트의 시작 노드를 가리킨다.
     int count; // 총 저장된 노드의 수
 
+    public int getCount() {
+        return count;
+    }
+
     /*
     연결리스트에 필요한 연산
      */
