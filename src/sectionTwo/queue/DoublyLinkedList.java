@@ -16,9 +16,17 @@ public class DoublyLinkedList {
         return count;
     }
 
+    public DoublyNode getHead() {
+        return head;
+    }
+
+    public DoublyNode getTail() {
+        return tail;
+    }
+
     /*
-        이중연결리스트에 필요한 연산
-         */
+            이중연결리스트에 필요한 연산
+             */
     // 1. 모든 데이터 출력
     public void printAll() {
         DoublyNode currentNode = this.head;

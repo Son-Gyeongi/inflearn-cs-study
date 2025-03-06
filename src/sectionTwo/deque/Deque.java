@@ -6,7 +6,7 @@ import sectionTwo.queue.DoublyNode;
 /*
 덱
 - 스택, 큐를 전부 구현할 수 있다.
-- DoublyLinkedList(연결리스트)로 구현
+- DoublyLinkedList(이중연결리스트)로 구현
 
 - 스택으로 활용
     - addFirst(), removeFirst()

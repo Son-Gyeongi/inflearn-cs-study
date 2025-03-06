@@ -19,6 +19,14 @@ public class DoublyNode {
         return data;
     }
 
+    public DoublyNode getNext() {
+        return next;
+    }
+
+    public DoublyNode getPrev() {
+        return prev;
+    }
+
     @Override
     public String toString() {
         return "DoublyNode{" +
