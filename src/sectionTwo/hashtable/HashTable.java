@@ -22,6 +22,10 @@ public class HashTable {
         }
     }
 
+    public Object[] getArr() {
+        return arr;
+    }
+
     // 해시 테이블에서 가장 중요한 게 해시함수
     public int hashFunction(int number) {
         return number % 10;

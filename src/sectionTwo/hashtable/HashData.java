@@ -11,4 +11,8 @@ public class HashData {
         this.key = key;
         this.value = value;
     }
+
+    public int getKey() {
+        return key;
+    }
 }
