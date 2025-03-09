@@ -15,4 +15,8 @@ public class HashData {
     public int getKey() {
         return key;
     }
+
+    public Object getValue() {
+        return value;
+    }
 }
