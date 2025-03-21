@@ -1,7 +1,9 @@
 package sectionThree.memoization.recursion;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 
 public class Fibonacci {
     // 재귀
@@ -29,6 +31,27 @@ public class Fibonacci {
         return memo.get(n);
     }
 
+    // 동적 프로그래밍 - 타뷸레이션
+    // 상향식 계산 방식 - 계산에 필요하지 않을 수도 있는 값도 미리 계산해 테이블에 저장
+    public static int fibonacci3(int n) {
+        // 예외 조건
+        if (n == 0 || n == 1) return n;
+
+        // 계산 결과를 저장할 테이블 만들기
+        List<Integer> table = new ArrayList<>();
+        // 처음에 0과 1로 초기화
+        table.add(0);
+        table.add(1);
+
+        // 상향식으로 밑에서부터 계산해 테이블에 결과 저장
+        for (int i = 2; i <= n; i++) {
+            table.add(table.get(i - 2) + table.get(i - 1));
+        }
+
+        // 테이블에 저장된 결과를 리턴
+        return table.get(n);
+    }
+
     public static void main(String[] args) {
         // 5번째 값 출력
         // 재귀
@@ -44,6 +67,13 @@ public class Fibonacci {
         System.out.println(fibonacci2(40, memo));
         end = Calendar.getInstance();
         System.out.println("fibonacci2 함수 실행시간: "
+                + (end.getTimeInMillis() - start.getTimeInMillis()) + "ms");
+
+        // 동적 프로그래밍 - 타뷸레이션
+        start = Calendar.getInstance();
+        System.out.println(fibonacci3(40));
+        end = Calendar.getInstance();
+        System.out.println("fibonacci3 함수 실행시간: "
                 + (end.getTimeInMillis() - start.getTimeInMillis()) + "ms");
     }
 }
