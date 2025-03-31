@@ -3,16 +3,16 @@ package sectionThree.quickSort.specialMission;
 import java.util.Arrays;
 
 public class QuickSortMission {
-    public static void quickSortM(Runner[] runners, int left, int right) {
+    public static void quickSortM(Runner[] runners, int left, int right, int depth) {
         if (left <= right) {
             int pivot = divideM(runners, left, right);
 
-            quickSortM(runners, left, pivot - 1);
-            quickSortM(runners, pivot + 1, right);
+            quickSortM(runners, left, pivot - 1, depth + 1);
+            quickSortM(runners, pivot + 1, right, depth + 1);
         }
 
-        // 정렬이 다 끝난 후 - 가장 첫 번째 데이터인 '나'의 출석수를 변경
-        if (right == runners.length - 1) {
+        if (depth == 0) {
+            // 정렬이 다 끝난 후 - 가장 첫 번째 데이터인 '나'의 출석수를 변경
             runners[0].setCount(5);
         }
     }
@@ -59,7 +59,7 @@ public class QuickSortMission {
         System.out.println("===== 정렬 전 =====");
         System.out.println(Arrays.toString(runners));
 
-        quickSortM(runners, 0, runners.length - 1);
+        quickSortM(runners, 0, runners.length - 1, 0);
 
         System.out.println("===== 정렬 후 =====");
         System.out.println(Arrays.toString(runners));
